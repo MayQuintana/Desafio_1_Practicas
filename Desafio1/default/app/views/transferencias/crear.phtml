@@ -1,0 +1,15 @@
+<?php View::content() ?>
+<h3>Crear Usuario<h3>
+
+<?= Form::open(); // por defecto llama a la misma url ?> 
+
+<label>ID
+      <?= Form::text('transferencias.id') ?></label>
+     
+      <label>Nombre
+      <?= Form::text('transferencias.nombre') ?></label>
+
+    
+      <?= Form::submit('Agregar') ?> 
+
+<?= Form::close() ?> 

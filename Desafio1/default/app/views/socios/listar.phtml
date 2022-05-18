@@ -1,0 +1,36 @@
+<div class="content">
+  <?php View::content() ?> 
+  <h3> Listado de socios</h3>
+
+<style>
+table,th{
+border: 1px solid #000000;
+    }
+</style>
+
+<table border-collapse: separate; WIDTH="500">
+
+<strong>
+<tr>
+  <th> ID </th>
+  <th> Nombre  </th>
+   <th>Opciones </th>
+ </tr>
+</strong>
+
+<?php foreach($lista->items as $item) : ?>  
+<tr>
+  <th><?=$item->id ?> </th>
+  <th> <?= $item->nombre?></th>
+  <th> <?= Html::linkAction("editar/$item->id/", ' Editar | ') ?> 
+   <?= Html::linkAction("eliminar/$item->id/", ' Eliminar |') ?>  
+   <?= Html::linkAction("ver/$item->id/", ' Ver ') ?>
+   </th>
+ </tr>
+  <?php endforeach ?>
+
+  </table>
+
+  <?php if($lista->prev) echo Html::linkAction("index/$lista->prev/", '<< Anterior |') ?> 
+  <?php if($lista->next) echo Html::linkAction("index/$lista->next/", 'Proximo >>') ?> 
+</div>
